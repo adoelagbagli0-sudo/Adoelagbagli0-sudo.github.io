@@ -77,7 +77,7 @@ Si tu veux proposer des textes ou poèmes :
 
 ## 📬 Contact
 
-Tu peux me contacter via :  
-- Email :mon.email@example.com  
-- Twitter / Instagram : @TonPseudo  
+Tu peux me contacter via : 96674012
+- Email :adoelagbagli0@gmail.com  
+- Twitter / Instagram : adoelagbagli0 
 
