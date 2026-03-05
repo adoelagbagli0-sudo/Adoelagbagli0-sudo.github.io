@@ -4,9 +4,8 @@ Bienvenue sur mon site où je partage mes poèmes et textes.
 Chaque mot est une invitation à voyager dans mes pensées et émotions.  
 
 <p align="center">
-  <img src="images/personne_capuche_mer.png" alt="Personne en capuche au bord de la mer" width="400"/>
+  <img src="personne_capuche_mer.png" alt="Poète au bord de la mer" width="400"/>
 </p>
-
 ---
 
 ## 🌟 À propos
