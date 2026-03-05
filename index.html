@@ -2,13 +2,204 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon premier site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Coin de Poèmes</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: #f4f1ea;
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 2.5s ease-out;
+            /* On cache le curseur par défaut pour mettre la plume */
+            cursor: none; 
+        }
+
+        /* La Plume qui suit la souris */
+        #cursor-feather {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 24px;
+            transition: transform 0.1s ease-out;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            max-width: 750px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 4px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            margin-bottom: 40px;
+            max-width: 100%;
+            border: 1px solid #222;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .audio-section {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 15px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: inline-block;
+            cursor: none;
+        }
+
+        audio {
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        .poeme {
+            background: #161616;
+            padding: 50px;
+            border-radius: 2px;
+            margin: 40px 0;
+            white-space: pre-line;
+            font-style: italic;
+            text-align: left;
+            display: block;
+            border-left: 2px solid #d4af37;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #d4af37;
+            font-size: 1.5em;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guestbook {
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border: 1px dashed #444;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 12px 25px;
+            cursor: none; /* Pour garder la plume sur les boutons */
+            font-family: 'Georgia', serif;
+            border-radius: 2px;
+            transition: 0.4s;
+            margin: 10px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #0f0f0f;
+        }
+
+        .footer {
+            margin-top: 80px;
+            font-size: 0.8em;
+            color: #444;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #333, transparent);
+            margin: 40px 0;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Bienvenu sur mon site de diverstissement</h1>
-    <p>Mon nom est Adoël et je suis disponible pour toutes sortes de bêtises</p>
+    <div id="cursor-feather">🖋️</div>
+
+    <div class="container">
+        <h1>🖋️ Mon Coin de Poèmes</h1>
+        <p class="subtitle">"Chaque mot est un voyage, chaque mot est un pas vers l’âme."</p>
+        
+        <div class="audio-section">
+            <span style="font-size: 0.7em; color: #d4af37; display: block; margin-bottom: 5px; text-transform: uppercase;">Ambiance Marine</span>
+            <audio controls loop>
+                <source src="https://www.soundjay.com/nature/ocean-wave-1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <img src="personne_capuche_mer.png" alt="Poète au bord de la mer">
+
+        <div class="poeme">
+            <h2>1. Ensemble sur une île</h2>
+            Souffrir m’a poussé à souhaiter,  
+            Être seul, loin, sur une île isolée.  
+            Loin des bruits, loin des regards,  
+            Trouver en moi un espace, un havre quelque part.  
+
+            Mais, au fond de moi, une vérité éclaire,  
+            Ce n’est pas la solitude que je désire,  
+            Mais être ensemble, sur cette île,  
+            Partager la vie, malgré la mer.  
+        </div>
+
+        <div class="guestbook">
+            <h3>📖 Livre d'or</h3>
+            <p>Une émotion ? Une pensée à partager ?</p>
+            <a href="mailto:ton.email@example.com?subject=Message pour le Livre d'Or" class="btn">✍️ Laisser un message</a>
+            <button class="btn" onclick="copyLink()">🔗 Partager le recueil</button>
+        </div>
+
+        <div class="footer">
+            <hr>
+            <p>© 2026 - Mon Coin de Poèmes | La plume et l'océan</p>
+        </div>
+    </div>
+
+    <script>
+        // Script pour faire suivre la plume au curseur
+        const feather = document.getElementById('cursor-feather');
+        
+        document.addEventListener('mousemove', (e) => {
+            feather.style.left = e.clientX + 'px';
+            feather.style.top = e.clientY + 'px';
+        });
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Lien du recueil copié !");
+        }
+    </script>
 
 </body>
 </html>
-
